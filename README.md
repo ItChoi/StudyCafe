@@ -54,7 +54,10 @@
 # 🏗 프로젝트 구조
 
 - src
+  - main.kotlin.org.example.studycafe
     - domain
+    - 
+    
 
 ---
 
