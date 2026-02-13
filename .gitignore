@@ -41,3 +41,10 @@ out/
 
 ### MARKDOWN ###
 markdown
+
+### env ###
+.env
+init.sql
+
+### yml ###
+application-*.yml

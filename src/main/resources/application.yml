@@ -1,3 +1,8 @@
 spring:
   application:
     name: StudyCafe
+  profiles:
+    include: database
+  sql:
+    init:
+      mode: never

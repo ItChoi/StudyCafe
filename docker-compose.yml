@@ -1,0 +1,30 @@
+x-global-env: &global-env
+  env_file:
+    - .env
+
+services:
+  postgres:
+    image: itchoi0429/postgresql:1.0
+    container_name: study-cafe-postgresql
+    <<: *global-env
+    ports:
+      - ${POSTGRESQL_CLIENT_PORT}:${POSTGRESQL_SERVER_PORT}
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_SCHEMA}
+      POSTGRES_USER: ${POSTGRES_ROOT}
+      POSTGRES_PASSWORD: ${DEFAULT_PASSWORD}
+    volumes:
+      - study-cafe-postgresql-volume:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - study-cafe-network
+
+volumes:
+  study-cafe-postgresql-volume:
+    name: study-cafe-postgresql-volume
+    external: true
+networks:
+  study-cafe-network:
+    name: study-cafe-network
+    external: true
