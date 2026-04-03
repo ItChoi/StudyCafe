@@ -2,7 +2,7 @@ spring:
   application:
     name: StudyCafe
   profiles:
-    include: database
+    include: database, local
   sql:
     init:
       mode: never
