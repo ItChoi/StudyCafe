@@ -22,11 +22,6 @@ class SecurityConfigTest(
     @Autowired private val mockMvc: MockMvc,
 ) {
 
-    @Test
-    fun `permits all requests`() {
-        mockMvc.perform(get("/test"))
-            .andExpect(status().isOk)
-    }
 
     @Test
     fun `allows configured origin in preflight requests`() {

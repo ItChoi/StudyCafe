@@ -5,5 +5,5 @@ enum class GenderType(
 ) {
     MALE("남성"),
     FEMALE("여성"),
-    NONE("미지정",)
+    NONE("미지정"),
 }

@@ -1,17 +1,12 @@
-x-global-env: &global-env
-  env_file:
-    - .env
-
 services:
   postgres:
     image: itchoi0429/postgresql:1.0
     container_name: study-cafe-postgresql
-    <<: *global-env
     ports:
-      - ${POSTGRESQL_CLIENT_PORT}:${POSTGRESQL_SERVER_PORT}
+      - 5432:5432
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${POSTGRES_SCHEMA}
+      POSTGRES_DB: study-cafe
       POSTGRES_USER: ${POSTGRES_ROOT}
       POSTGRES_PASSWORD: ${DEFAULT_PASSWORD}
     volumes:

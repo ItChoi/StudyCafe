@@ -46,5 +46,8 @@ markdown
 .env
 init.sql
 
+### Claude Code (local-only, should not be shared) ###
+.claude/settings.local.json
+
 ### yml ###
 application-*.yml

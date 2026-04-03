@@ -3,6 +3,8 @@ spring:
     name: StudyCafe
   profiles:
     include: database, local
+  config:
+    import: optional:file:${user.home}/.config/local/rdb/secrets.yml
   sql:
     init:
       mode: never
