@@ -1,4 +1,4 @@
-package org.example.studycafe.domain
+package org.example.studycafe.domain.member
 
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType
@@ -6,25 +6,19 @@ import jakarta.persistence.Enumerated
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
-import org.example.studycafe.common.enumeration.DayOfWeekType
-import java.time.LocalTime
+import org.example.studycafe.common.enumeration.GenderType
+import org.example.studycafe.domain.common.BaseDateTimeEntity
 
 @Entity
-class BranchBusinessHour(
+class Member(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     var id: Long?,
 
-    var branchId: String?,
+    var nickname: String,
 
     @Enumerated(EnumType.STRING)
-    var dayOfWeek: DayOfWeekType?,
+    var gender: GenderType = GenderType.NONE,
 
-    var isClosed: Boolean?,
 
-    var startTime: LocalTime?,
-
-    var endTime: LocalTime?,
-) {
-
-}
+) : BaseDateTimeEntity()

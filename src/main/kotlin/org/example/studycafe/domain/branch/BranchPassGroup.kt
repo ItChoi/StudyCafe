@@ -1,4 +1,4 @@
-package org.example.studycafe.domain
+package org.example.studycafe.domain.branch
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -6,20 +6,15 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
-class BranchPassDetail(
+class BranchPassGroup(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     var id: Long?,
 
-    var branchPassId: Long,
+    var branchId: Long,
 
     var name: String,
 
-    var price: Int,
-
-    var creditMinutes: Int,
-
-    var durationDays: Int,
-
+    var orderNo: Int,
 ) {
 }

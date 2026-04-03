@@ -1,4 +1,4 @@
-package org.example.studycafe.domain
+package org.example.studycafe.domain.branch
 
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType

@@ -1,23 +1,25 @@
-package org.example.studycafe.domain
+package org.example.studycafe.domain.branch
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
-import java.time.OffsetDateTime
 
 @Entity
-class BranchSeatHistory(
+class BranchPassDetail(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     var id: Long?,
 
-    var branchSeatId: Long,
+    var branchPassId: Long,
 
-    var memberId: Long,
+    var name: String,
 
-    var startDtm: OffsetDateTime,
+    var price: Int,
 
-    var endDtm: OffsetDateTime,
+    var creditMinutes: Int,
+
+    var durationDays: Int,
+
 ) {
 }
