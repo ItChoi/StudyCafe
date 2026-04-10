@@ -12,5 +12,20 @@
         "matcher": "Edit|Write|MultiEdit"
       }
     ]
+  },
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "language": "korean",
+  "permissions": {
+    "allow": [
+      "Bash(docker compose *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ]
   }
+
 }
